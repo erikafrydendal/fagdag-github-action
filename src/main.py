@@ -4,6 +4,11 @@ import pyfiglet
 from haiku_checker import is_haiku
 from github_utils import commit_and_push, get_latest_commit_message
 
+#En test av haiku pr
+#enda en test
+#en tredje test
+#den siste testen
+
 if __name__ == '__main__':
 
     acces_token = os.environ.get('GITHUB_TOKEN')
@@ -35,7 +40,7 @@ if __name__ == '__main__':
 
 
     if (is_haiku(commit_message)):
-        haiku_ascii_art =pyfiglet.pyfiglet_format(commit_message)
+        haiku_ascii_art =pyfiglet.figlet_format(commit_message)
         with open(file_path,"w") as file:
             file.write(f"```{haiku_ascii_art}```")
         commit_and_push(repo,branch,file_path)
